@@ -10,7 +10,7 @@
   "dependencies": {
     "@syncfusion/ej2-vue-buttons": "^19.4.55",
     "core-js": "^3.8.3",
-    "vue": "^2.7.3"
+    "vue": "^2.7.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
