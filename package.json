@@ -12,7 +12,7 @@
     "@syncfusion/ej2-vue-buttons": "^20.3.49",
     "@syncfusion/ej2-vue-grids": "^20.3.49",
     "core-js": "^3.25.5",
-    "vue": "^2.7.11",
+    "vue": "^2.7.12",
     "vue-class-component": "^7.2.6"
   },
   "devDependencies": {
@@ -29,7 +29,8 @@
     "eslint-plugin-vue": "^9.6.0",
     "jest": "^29.1.2",
     "jest-environment-jsdom": "^29.1.2",
-    "jest-serializer-vue-tjw": "^3.19.0"
+    "jest-serializer-vue-tjw": "^3.19.0",
+    "vue-template-compiler": "^2.7.12"
   },
   "eslintConfig": {
     "root": true,
