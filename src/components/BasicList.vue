@@ -8,6 +8,7 @@
       :edit-settings="computedEditSettings"
       :query-cell-info="handleQueryCellInfo"
       :row-selected="handleRowSelected"
+      :toolbar="[]"
     >
       <e-columns>
         <e-column

@@ -2,7 +2,7 @@
 
 exports[`BasicList.vue should render as expected 1`] = `
 <div>
-  <ejs-grid-stub action-complete="function () { [native code] }" data-bound="function () { [native code] }" datasource="[object Object],[object Object]" edit-settings="[object Object]" query-cell-info="function () { [native code] }" row-selected="function () { [native code] }" toolbar="Add,Edit,Delete,Search,Print">
+  <ejs-grid-stub action-complete="function () { [native code] }" data-bound="function () { [native code] }" datasource="[object Object],[object Object]" edit-settings="[object Object]" query-cell-info="function () { [native code] }" row-selected="function () { [native code] }" toolbar>
     <e-columns-stub>
       <e-column-stub field="id" foreign-key-field="id" foreign-key-value="name" headertext="ID"></e-column-stub>
       <e-column-stub field="name" foreign-key-field="foo" foreign-key-value="bar" headertext="Name"></e-column-stub>

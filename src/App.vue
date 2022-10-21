@@ -3,20 +3,25 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <ejs-button>Button</ejs-button>
+    <BasicList :grid-params="{}" />
   </div>
 </template>
 
 <script>
 import Vue from 'vue';
 import { ButtonPlugin } from '@syncfusion/ej2-vue-buttons';
+import { GridPlugin } from '@syncfusion/ej2-vue-grids';
 import HelloWorld from './components/HelloWorld.vue'
+import BasicList from './components/BasicList.vue'
 
 Vue.use(ButtonPlugin);
+Vue.use(GridPlugin);
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    BasicList,
   }
 }
 </script>
