@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <ejs-button>Button</ejs-button>
-    <BasicList :grid-params="{}" />
+    <div class="center-stuff">
+      <img alt="Vue logo" src="./assets/logo.png">
+      <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <ejs-button>Button</ejs-button>
+    </div>
+    <RichTextEditor />
   </div>
 </template>
 
@@ -13,7 +15,7 @@ import { ButtonPlugin } from '@syncfusion/ej2-vue-buttons';
 import { GridPlugin } from '@syncfusion/ej2-vue-grids';
 import { RichTextEditorPlugin } from '@syncfusion/ej2-vue-richtexteditor';
 import HelloWorld from './components/HelloWorld.vue'
-import BasicList from './components/BasicList.vue'
+import RichTextEditor from './components/RichTextEditor.vue'
 
 Vue.use(ButtonPlugin);
 Vue.use(GridPlugin);
@@ -23,12 +25,12 @@ export default {
   name: 'App',
   components: {
     HelloWorld,
-    BasicList,
+    RichTextEditor,
   }
 }
 </script>
 
-<style>
+<style scoped>
 @import '../node_modules/@syncfusion/ej2-base/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';
@@ -43,8 +45,11 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.center-stuff {
+  text-align: center;
 }
 </style>
