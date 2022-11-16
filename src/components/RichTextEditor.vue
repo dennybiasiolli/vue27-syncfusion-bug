@@ -27,6 +27,13 @@ export default {
           'Formats', 'Alignments', 'OrderedList', 'UnorderedList', '|',
           'CreateTable', '|',
           'CreateLink', 'Image', '|',
+          {
+            tooltipText: 'Insert Symbol',
+            undo: true,
+            click: this.onClick.bind(this),
+            template: '<button class="e-tbar-btn e-btn" tabindex="-1" id="custom_tbar"  style="width:100%"><div class="e-tbar-btn-text" style="font-weight: 500;"> &#937;</div></button>'
+          },
+          '|',
           'SourceCode', 'Undo', 'Redo', '|',
           'ClearFormat',
         ],
@@ -72,6 +79,8 @@ export default {
   methods: {
     onClick() {
       console.log('onClick', this.$refs.defaultRTE)
+      this.$refs.defaultRTE.ej2Instances.executeCommand('insertText', '{{ foo-bar }}', {undo: true});
+      this.$refs.defaultRTE.ej2Instances.executeCommand('insertText', '<FooBar />', {undo: true});
     },
   },
 }
