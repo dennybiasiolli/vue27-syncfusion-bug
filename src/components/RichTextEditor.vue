@@ -28,10 +28,16 @@ export default {
           'CreateTable', '|',
           'CreateLink', 'Image', '|',
           {
-            tooltipText: 'Insert Symbol',
+            tooltipText: 'Insert Symbol 1',
             undo: true,
-            click: this.onClick.bind(this),
-            template: '<button class="e-tbar-btn e-btn" tabindex="-1" id="custom_tbar"  style="width:100%"><div class="e-tbar-btn-text" style="font-weight: 500;"> &#937;</div></button>'
+            click: () => this.onClick('{{ foo-bar }}'),
+            template: '<button class="e-tbar-btn e-btn" tabindex="-1" id="custom_tbar"  style="width:100%"><div class="e-tbar-btn-text" style="font-weight: 500;">&#9312;</div></button>'
+          },
+          {
+            tooltipText: 'Insert Symbol 2',
+            undo: true,
+            click: () => this.onClick('<FooBar />'),
+            template: '<button class="e-tbar-btn e-btn" tabindex="-1" id="custom_tbar"  style="width:100%"><div class="e-tbar-btn-text" style="font-weight: 500;">&#9313;</div></button>'
           },
           '|',
           'SourceCode', 'Undo', 'Redo', '|',
@@ -77,10 +83,8 @@ export default {
     };
   },
   methods: {
-    onClick() {
-      console.log('onClick', this.$refs.defaultRTE)
-      this.$refs.defaultRTE.ej2Instances.executeCommand('insertText', '{{ foo-bar }}', {undo: true});
-      this.$refs.defaultRTE.ej2Instances.executeCommand('insertText', '<FooBar />', {undo: true});
+    onClick(strSymbol) {
+      this.$refs.defaultRTE.ej2Instances.executeCommand('insertText', strSymbol, {undo: true});
     },
   },
 }
