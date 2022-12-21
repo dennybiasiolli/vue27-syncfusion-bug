@@ -9,10 +9,10 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@syncfusion/ej2-vue-base": "^20.3.59",
-    "@syncfusion/ej2-vue-buttons": "^20.3.58",
-    "@syncfusion/ej2-vue-grids": "^20.3.60",
-    "@syncfusion/ej2-vue-richtexteditor": "^20.3.60",
+    "@syncfusion/ej2-vue-base": "^20.4.38",
+    "@syncfusion/ej2-vue-buttons": "^20.4.38",
+    "@syncfusion/ej2-vue-grids": "^20.4.38",
+    "@syncfusion/ej2-vue-richtexteditor": "^20.4.38",
     "core-js": "^3.26.1",
     "vue": "^2.7.14",
     "vue-class-component": "^7.2.6"
