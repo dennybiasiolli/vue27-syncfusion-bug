@@ -1,5 +1,6 @@
 <template>
   <div>
+    <ejs-button>Button</ejs-button>
     <ejs-richtexteditor
       ref="defaultRTE"
       v-model="value"
