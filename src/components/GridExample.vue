@@ -51,7 +51,7 @@ export default {
             dropInstance.text = args.filteredValue || '';
           },
           read: (args) => {
-            args.fltrObj.filterByColumn(args.column.field, args.operator, dropInstance.text);
+            args.fltrObj.filterByColumn(args.column.field, args.operator, dropInstance.text.split(','));
           },
         },
       },
