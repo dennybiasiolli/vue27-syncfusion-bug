@@ -20,6 +20,7 @@ import { data, fEmployeeData } from './datasource.js';
 MultiSelect.Inject(CheckBoxSelection); // mandatory for `mode: 'CheckBox'`
 
 let dropInstance;
+let arr = [];
 
 export default {
   data: () => {
@@ -47,11 +48,13 @@ export default {
             });
             dropInstance.appendTo(flValInput);
           },
-          write: (args) => {
-            dropInstance.text = args.filteredValue || '';
+          write: (/* args */) => {
+            dropInstance.text = arr.toString() || '';
           },
           read: (args) => {
-            args.fltrObj.filterByColumn(args.column.field, args.operator, dropInstance.text.split(','));
+            const values = dropInstance.value || [];
+            arr = values.map((value) => dropInstance.getTextByValue(value));
+            args.fltrObj.filterByColumn(args.column.field, args.operator, arr);
           },
         },
       },
