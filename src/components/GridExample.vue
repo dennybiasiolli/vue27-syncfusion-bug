@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ejs-grid ref='grid' :dataSource='data' :allowFiltering='true' :filterSettings='filteroption' height='270px' :dataStateChange="handleDataStateChange">
+    <ejs-grid id="Grid" ref='grid' :dataSource='data' :allowFiltering='true' :filterSettings='filteroption' height='270px' :dataStateChange="handleDataStateChange">
       <e-columns>
         <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=100></e-column>
         <e-column field='EmployeeID' headerText='Employee Name' :dataSource='employeeData' foreignKeyValue='FirstName'
@@ -57,6 +57,13 @@ export default {
             dropInstance.text = arr.toString() || '';
           },
           read: (args) => {
+            // not working
+            args.fltrObj.removeFilteredColsByField(args.column.field);
+
+            // not working
+            var grid = document.getElementById("Grid").ej2_instances[0];
+            grid.removeFilteredColsByField(args.column.field);
+
             const values = dropInstance.value || [];
             arr = values.map((value) => dropInstance.getTextByValue(value));
             args.fltrObj.filterByColumn(args.column.field, args.operator, arr);
