@@ -39,7 +39,7 @@ export default {
           create: (args) => {
             let flValInput = createElement('input', { className: 'flm-input' });
             args.target.appendChild(flValInput);
-            args.target.parentElement.getElementsByClassName("e-flm_optrdiv")[0].remove();
+            args.target.parentElement.getElementsByClassName("e-flm_optrdiv")[0].hidden = true;
             args.target.parentElement.getElementsByClassName(
               "e-flmenu-valuediv"
             )[0].style.paddingTop = 0;
