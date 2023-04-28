@@ -4,6 +4,7 @@
       <img alt="Vue logo" src="./assets/logo.png">
       <HelloWorld msg="Welcome to Your Vue.js App"/>
     </div>
+    <GridWithDetail />
     <GridExample />
     <!-- <RichTextEditor /> -->
   </div>
@@ -13,6 +14,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 // import RichTextEditor from './components/RichTextEditor.vue'
 import GridExample from './components/GridExample.vue'
+import GridWithDetail from './components/GridWithDetail.vue'
 
 export default {
   name: 'App',
@@ -20,6 +22,7 @@ export default {
     HelloWorld,
     // RichTextEditor,
     GridExample,
+    GridWithDetail,
   }
 }
 </script>
