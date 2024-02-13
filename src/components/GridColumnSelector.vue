@@ -17,10 +17,17 @@
         </li>
       </ol>
     </div>
+    {{  }}
+    <ul v-if="startupColumnState">
+      Original column state:
+      <li v-for="col in startupColumnState" :key="col.field">
+        Column "{{ col.headerText }}" originally set to visible={{ col.visible || false }}
+      </li>
+    </ul>
     <ul v-if="columnstate">
       Columnstate event, columns changed:
       <li v-for="col in columnstate" :key="col.field">
-        Column {{ col.headerText }} changed to visible={{ col.visible }}
+        Column "{{ col.headerText }}" changed to visible={{ col.visible || false }}
       </li>
     </ul>
     <ejs-grid :dataSource="data" :show-column-chooser="true" :toolbar="toolbarOptions" :columns="columns"
@@ -40,6 +47,7 @@ export default {
       toolbarOptions: ['ColumnChooser'],
       columns: [],
       columnstate: null,
+      startupColumnState: [],
     };
   },
   provide: {
@@ -89,6 +97,11 @@ export default {
         width: 150,
       },
     ];
+    this.startupColumnState = this.columns.map(col => ({
+      field: col.field,
+      headerText: col.headerText,
+      visible: col.visible
+    }));
   },
   methods: {
     handleActionComplete(args) {
