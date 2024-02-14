@@ -8,6 +8,7 @@
     <!-- <GridExample /> -->
     <!-- <RichTextEditor /> -->
     <GridColumnSelector />
+    <StockChart />
   </div>
 </template>
 
@@ -17,6 +18,7 @@
 // import GridExample from './components/GridExample.vue'
 // import GridWithDetail from './components/GridWithDetail.vue'
 import GridColumnSelector from './components/GridColumnSelector.vue'
+import StockChart from './components/StockChart.vue'
 
 export default {
   name: 'App',
@@ -26,11 +28,12 @@ export default {
     // GridExample,
     // GridWithDetail,
     GridColumnSelector,
+    StockChart,
   }
 }
 </script>
 
-<style scoped>
+<style>
 @import '@syncfusion/ej2-base/styles/material.css';
 @import '@syncfusion/ej2-buttons/styles/material.css';
 @import '@syncfusion/ej2-calendars/styles/material.css';
@@ -50,6 +53,11 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.e-control {
+    font-family: Avenir, Helvetica, Arial, sans-serif !important;
+}
+
 
 .center-stuff {
   text-align: center;

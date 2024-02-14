@@ -3,6 +3,8 @@ import { ButtonComponent, CheckBoxComponent } from "@syncfusion/ej2-vue-buttons"
 import { DateTimePickerComponent } from "@syncfusion/ej2-vue-calendars";
 import {
   // ChartComponent,
+  StockChartPeriodsDirective,
+  StockChartPeriodDirective,
   StockChartComponent,
   SeriesCollectionDirective,
   SeriesDirective,
@@ -55,6 +57,8 @@ Vue.component("ejs-dialog", DialogComponent);
 Vue.component("ejs-datetimepicker", DateTimePickerComponent);
 
 Vue.component("ejs-stockchart", StockChartComponent);
+Vue.component("e-stockchart-periods", StockChartPeriodsDirective);
+Vue.component("e-stockchart-period", StockChartPeriodDirective);
 Vue.component("e-stockchart-series-collection", SeriesCollectionDirective);
 Vue.component("e-stockchart-series", SeriesDirective);
 Vue.component("e-stockchart-stockevents", StockEventsDirective);
