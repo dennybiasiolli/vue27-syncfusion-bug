@@ -1,12 +1,15 @@
 <template>
   <div>
-    <ejs-grid id="Grid" ref='grid' :dataSource='data' :allowFiltering='true' :filterSettings='filteroption' height='270px' :dataStateChange="handleDataStateChange">
+    <ejs-grid id="Grid" ref='grid' :dataSource='dataSource' :allowFiltering='true' :filterSettings='filteroption' height='270px' :dataStateChange="handleDataStateChange">
       <e-columns>
-        <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=100></e-column>
-        <e-column field='EmployeeID' headerText='Employee Name' :dataSource='employeeData' foreignKeyValue='FirstName'
-          :filter='filter' width=120></e-column>
-        <e-column field='Freight' headerText='Freight' textAlign='Center' format='C2' width=80></e-column>
-        <e-column field='ShipCity' headerText='Ship City' width=130></e-column>
+        <!--
+          <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=100></e-column>
+          <e-column field='EmployeeID' headerText='Employee Name' :dataSource='employeeData' foreignKeyValue='FirstName'
+            :filter='filter' width=120></e-column>
+          <e-column field='Freight' headerText='Freight' textAlign='Center' format='C2' width=80></e-column>
+          <e-column field='ShipCity' headerText='Ship City' width=130></e-column>
+        -->
+        <e-column v-for="col in columns" :key="col.id" v-bind="col" />
       </e-columns>
     </ejs-grid>
     <h3>Last dataStateChange args.where</h3>
@@ -30,7 +33,8 @@ export default {
   data: () => {
     return {
       lastDataStateChangeArgs: {},
-      data: { count: 123, result: data },
+      dataSource: { count: 0, result: [] },
+      columns: [],
       employeeData: fEmployeeData,
       filteroption: { type: 'Menu' },
       filter: {
@@ -72,13 +76,22 @@ export default {
       },
     };
   },
+  mounted() {
+    this.columns = [
+      { field: 'OrderID', headerText: 'Order ID', textAlign: 'Right', width: 100 },
+      { field: 'EmployeeID', headerText: 'Employee Name', dataSource: this.employeeData, foreignKeyField: 'EmployeeID', foreignKeyValue: 'FirstName', filter: this.filter, width: 120 },
+      { field: 'Freight', headerText: 'Freight', textAlign: 'Center', format: 'C2', width: 80 },
+      { field: 'ShipCity', headerText: 'Ship City', width: 130 },
+    ];
+    this.dataSource = { count: 123, result: data };
+  },
   methods: {
     handleDataStateChange(state) {
       this.lastDataStateChangeArgs = state;
       console.log('handleDataStateChange triggered with state:', state);
       console.log('pageState?.where', state?.where);
       // returning the same data as before
-      this.data = { ...this.data };
+      this.dataSource = { ...this.dataSource };
     },
   },
   provide: {

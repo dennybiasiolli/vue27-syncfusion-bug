@@ -5,7 +5,7 @@
       <HelloWorld msg="Welcome to Your Vue.js App"/>
     </div> -->
     <!-- <GridWithDetail /> -->
-    <!-- <GridExample /> -->
+    <GridExample />
     <!-- <RichTextEditor /> -->
     <GridColumnSelector />
     <StockChart />
@@ -15,7 +15,7 @@
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 // import RichTextEditor from './components/RichTextEditor.vue'
-// import GridExample from './components/GridExample.vue'
+import GridExample from './components/GridExample.vue'
 // import GridWithDetail from './components/GridWithDetail.vue'
 import GridColumnSelector from './components/GridColumnSelector.vue'
 import StockChart from './components/StockChart.vue'
@@ -25,7 +25,7 @@ export default {
   components: {
     // HelloWorld,
     // RichTextEditor,
-    // GridExample,
+    GridExample,
     // GridWithDetail,
     GridColumnSelector,
     StockChart,
