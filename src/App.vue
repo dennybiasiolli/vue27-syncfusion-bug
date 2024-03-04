@@ -7,8 +7,8 @@
     <!-- <GridWithDetail /> -->
     <GridExample />
     <!-- <RichTextEditor /> -->
-    <GridColumnSelector />
-    <StockChart />
+    <!-- <GridColumnSelector /> -->
+    <!-- <StockChart /> -->
   </div>
 </template>
 
@@ -17,8 +17,8 @@
 // import RichTextEditor from './components/RichTextEditor.vue'
 import GridExample from './components/GridExample.vue'
 // import GridWithDetail from './components/GridWithDetail.vue'
-import GridColumnSelector from './components/GridColumnSelector.vue'
-import StockChart from './components/StockChart.vue'
+// import GridColumnSelector from './components/GridColumnSelector.vue'
+// import StockChart from './components/StockChart.vue'
 
 export default {
   name: 'App',
@@ -27,8 +27,8 @@ export default {
     // RichTextEditor,
     GridExample,
     // GridWithDetail,
-    GridColumnSelector,
-    StockChart,
+    // GridColumnSelector,
+    // StockChart,
   }
 }
 </script>

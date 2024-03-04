@@ -17,7 +17,7 @@
         </li>
       </ol>
     </div>
-    {{  }}
+
     <ul v-if="startupColumnState">
       Original column state:
       <li v-for="col in startupColumnState" :key="col.field">

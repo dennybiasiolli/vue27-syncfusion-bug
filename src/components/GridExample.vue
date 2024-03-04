@@ -12,8 +12,8 @@
         <e-column v-for="col in columns" :key="col.id" v-bind="col" />
       </e-columns>
     </ejs-grid>
-    <h3>Last dataStateChange args.where</h3>
-    <pre><code>{{ lastDataStateChangeArgs.where }}</code></pre>
+    <h3 v-if="lastDataStateChangeArgs.where">Last dataStateChange args.where</h3>
+    <pre v-if="lastDataStateChangeArgs.where"><code>{{ lastDataStateChangeArgs.where }}</code></pre>
   </div>
 </template>
 
